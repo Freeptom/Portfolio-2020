@@ -1,0 +1,20 @@
+// btns
+
+@mixin cta {
+  background: $accent1;
+  border-radius: $border-radius;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 16px 32px;
+  display: inline-block;
+}
+
+@mixin cta--small {
+  //   @include cta;
+  padding: 10px 24px;
+  margin: 0 0 0 1rem;
+  text-transform: lowercase;
+  display: initial;
+}
