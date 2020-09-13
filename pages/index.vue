@@ -4,9 +4,9 @@
       <div>
         <h1>Finally, a website your users will love.</h1>
         <p class="intro__sub-heading">
-          I’m Tom – builder of <strong>beautiful</strong>,
+          I’m Tom Pearson – builder of <strong>beautiful</strong>,
           <strong>bespoke</strong> and <strong>accessible</strong> websites for
-          businesses big and small.
+          clients big and small.
         </p>
         <nuxt-link to="#" class="cta">View my Work</nuxt-link>
       </div>
@@ -18,7 +18,7 @@
     <div class="wrapper">
       <section class="how full-bleed">
         <div class="wrapper">
-          <h2>How I can help you get more customers</h2>
+          <h2>How I can help you.</h2>
         </div>
       </section>
     </div>
@@ -129,18 +129,24 @@ export default {
 }
 
 .how {
-  background: $primary-color;
+  background: $primary-color-lighter;
   position: relative;
   &::after {
     content: '';
     position: absolute;
-    top: -10vh;
+    top: -8vh;
     right: 12vw;
     z-index: -1;
     background: $accent2;
     height: 126px;
     width: 126px;
     border-radius: 50%;
+    @media only screen and (min-width: $tablet) {
+      right: 60vw;
+    }
+    @media only screen and (min-width: $desktop) {
+      right: 12vw;
+    }
   }
 }
 </style>
