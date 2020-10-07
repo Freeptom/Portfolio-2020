@@ -18,7 +18,7 @@
     <div class="wrapper">
       <section class="how full-bleed">
         <div class="wrapper">
-          <h2>How I can help you.</h2>
+          <h2>How I can help <span>you</span>.</h2>
         </div>
       </section>
     </div>

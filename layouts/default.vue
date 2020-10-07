@@ -2,30 +2,52 @@
   <div>
     <header>
       <div class="wrapper">
-        <div class="navbar">
-          <nuxt-link to="/">tom the dev</nuxt-link>
-          <nav>
-            <ul>
-              <li>
-                <nuxt-link to="#">about</nuxt-link>
-              </li>
-              <li>
-                <nuxt-link to="#">portfolio</nuxt-link>
-              </li>
-              <li>
-                <nuxt-link to="#">blog</nuxt-link>
-              </li>
-              <li>
-                <nuxt-link to="#" class="cta cta--small">contact me</nuxt-link>
-              </li>
-            </ul>
-          </nav>
-        </div>
+        <button
+          class="ham"
+          :class="[isNavOpen ? 'nav-open' : '']"
+          @click="toggleMenu($event, 'isNavOpen')"
+        >
+          Menu
+        </button>
+        <nav class="navbar">
+          <ul :class="[isNavOpen ? 'nav-open' : '']">
+            <li id="logo">
+              <nuxt-link to="/">tom the dev</nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="#">about</nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="#">portfolio</nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="#">blog</nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="#" class="cta cta--small">contact me</nuxt-link>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
     <nuxt />
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      isNavOpen: false
+    }
+  },
+  methods: {
+    toggleMenu(event) {
+      this.isNavOpen = !this.isNavOpen
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 html {
@@ -71,8 +93,22 @@ html {
 
 @font-face {
   font-family: 'CircularStd';
+  src: url('~assets/fonts/CircularStd-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'CircularStd';
   src: url('~assets/fonts/CircularStd-Bold.ttf') format('truetype');
   font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CircularStd';
+  src: url('~assets/fonts/CircularStd-Black.ttf') format('truetype');
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -83,6 +119,10 @@ body {
 
 h1 {
   font-weight: bold;
+}
+
+h2 span {
+  font-weight: 800;
 }
 
 em {
@@ -108,36 +148,80 @@ strong em {
 
 header {
   background: white;
-  padding: 2.5rem 0;
+  padding: 2rem 0;
+  & > .wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  @media only screen and (min-width: $tablet) {
+    padding: 2.5rem 0;
+    & > .wrapper {
+      display: block;
+    }
+  }
+}
+
+.ham {
+  &.nav-open {
+    // position: absolute;
+    // top: 20vh;
+    // right: 10vw;
+    z-index: 2;
+  }
+  @media only screen and (min-width: $tablet) {
+    display: none;
+  }
 }
 
 .navbar {
   margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
   font-weight: 300;
   a {
     color: $dark;
     text-decoration: none;
   }
-  nav {
-    display: flex;
-    ul {
-      list-style-type: none;
-      padding: 0;
+  ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.95);
+    list-style-type: none;
+    padding: 0;
+    &.nav-open {
       display: flex;
-      li a {
-        padding: 0.5rem;
-        &.cta--small {
-          @include cta--small;
-        }
-      }
-      @media only screen and (min-width: $desktop) {
-        padding: 1rem;
+      position: absolute;
+      padding: 20vh 0;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+      justify-content: space-around;
+    }
+    li a {
+      padding: 0.5rem;
+      &.cta--small {
+        @include cta--small;
       }
     }
+    @media only screen and (min-width: $tablet) {
+      display: flex;
+
+      flex-direction: row;
+      #logo {
+        margin-right: auto;
+        a {
+          padding: 0;
+        }
+      }
+    }
+    @media only screen and (min-width: $desktop) {
+      padding: 1rem 1rem 1rem 0;
+    }
+  }
+  @media only screen and (min-width: $tablet) {
+    position: relative;
+    height: auto;
   }
 }
 
