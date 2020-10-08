@@ -9,10 +9,13 @@
   text-transform: uppercase;
   padding: 16px 32px;
   display: inline-block;
+  transition: background-color 250ms ease;
+  &:hover {
+    background-color: $accent1-darker;
+  }
 }
 
 @mixin cta--small {
-  //   @include cta;
   padding: 10px 24px;
   margin: 0 0 0 1rem;
   text-transform: lowercase;

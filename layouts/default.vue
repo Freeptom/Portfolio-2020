@@ -3,7 +3,7 @@
     <header>
       <div class="wrapper">
         <button
-          class="ham"
+          class="toggle"
           :class="[isNavOpen ? 'nav-open' : '']"
           @click="toggleMenu($event, 'isNavOpen')"
         >
@@ -161,12 +161,25 @@ header {
   }
 }
 
-.ham {
+.toggle {
+  background: $accent2;
+  padding: 10px 24px;
+  border-radius: $border-radius;
+  box-shadow: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  text-transform: lowercase;
+  transition: background-color 250ms ease;
+
+  &:hover {
+    cursor: pointer;
+    background: $accent2-darker;
+  }
   &.nav-open {
-    // position: absolute;
-    // top: 20vh;
-    // right: 10vw;
     z-index: 2;
+    opacity: 1;
   }
   @media only screen and (min-width: $tablet) {
     display: none;
@@ -181,13 +194,21 @@ header {
     text-decoration: none;
   }
   ul {
-    display: none;
+    display: block;
+    opacity: 0;
+    transition: opacity 500ms;
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
     flex-direction: column;
     align-items: center;
     background: rgba(255, 255, 255, 0.95);
     list-style-type: none;
     padding: 0;
+
     &.nav-open {
+      opacity: 1;
+      transition: opacity 250ms;
       display: flex;
       position: absolute;
       padding: 20vh 0;
@@ -196,22 +217,34 @@ header {
       height: 100%;
       width: 100%;
       z-index: 1;
-      justify-content: space-around;
+      justify-content: space-between;
     }
     li a {
+      // font-size: 2rem;
       padding: 0.5rem;
       &.cta--small {
         @include cta--small;
       }
     }
     @media only screen and (min-width: $tablet) {
+      position: relative;
+      top: 0;
+      left: 0;
       display: flex;
-
+      opacity: 1;
       flex-direction: row;
       #logo {
         margin-right: auto;
         a {
           padding: 0;
+        }
+      }
+      li a {
+        font-size: 1rem;
+      }
+      @media only screen and (min-width: $desktop) {
+        li a {
+          font-size: 1.125rem;
         }
       }
     }
@@ -239,6 +272,9 @@ section {
     padding: 60px 0 6rem 0;
   }
   @media only screen and (min-width: $tablet) {
+    padding: 108px 0 8rem 0;
+  }
+  @media only screen and (min-width: $desktop) {
     padding: 108px 0 12rem 0;
   }
   h1,
