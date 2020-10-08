@@ -19,6 +19,18 @@
       <section class="how full-bleed">
         <div class="wrapper">
           <h2>How I can help <span>you</span>.</h2>
+          <ul class="card-list">
+            <li v-for="skill in Skills" :key="skill.heading" class="card">
+              <card-item
+                :heading="skill.heading"
+                :desc="skill.desc"
+                :iconfile="skill.icon"
+                :herofile="skill.hero"
+              >
+                ></card-item
+              >
+            </li>
+          </ul>
         </div>
       </section>
     </div>
@@ -26,10 +38,34 @@
 </template>
 
 <script>
+import CardItem from '../components/CardItem.vue'
 export default {
+  components: {
+    CardItem
+  },
   data() {
     return {
-      title: 'Tom the Web Developer'
+      title: 'Tom the Web Developer',
+      Skills: [
+        {
+          heading: 'Tailored for you',
+          desc: 'test',
+          hero: 'tailored.jpg',
+          icon: 'create.svg'
+        },
+        {
+          heading: 'Create a Vue project with the CLI',
+          desc: 'test',
+          hero: 'tailored.jpg',
+          icon: 'create.svg'
+        },
+        {
+          heading: 'Have fun',
+          desc: 'test',
+          hero: 'tailored.jpg',
+          icon: 'create.svg'
+        }
+      ]
     }
   },
   head() {
@@ -130,8 +166,19 @@ export default {
 
 .how {
   background: $primary-color-lighter;
+  background-image: linear-gradient(
+      60deg,
+      $primary-color-darker,
+      rgba(255, 255, 255, 0)
+    ),
+    url('~assets/images/sprinkle.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover;
   position: relative;
-  &::after {
+  h2 {
+    color: white;
+  }
+  &::before {
     content: '';
     position: absolute;
     top: -8vh;
@@ -146,6 +193,35 @@ export default {
     }
     @media only screen and (min-width: $desktop) {
       right: 12vw;
+    }
+  }
+}
+
+.card-list {
+  padding: 0;
+  margin: 4rem 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  .card {
+    width: 100%;
+    background: white;
+    border-radius: $border-radius;
+    margin: 1rem;
+    @media only screen and (min-width: $tablet) {
+      max-width: 40%;
+    }
+    .hero-container {
+      &__image {
+        display: block;
+        object-fit: cover;
+        height: auto;
+        width: 100%;
+      }
+    }
+    .card-content {
+      padding: 1rem;
     }
   }
 }
