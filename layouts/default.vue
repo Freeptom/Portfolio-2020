@@ -220,7 +220,7 @@ header {
       justify-content: space-between;
     }
     li a {
-      font-size: 2rem;
+      font-size: 1.5rem;
       padding: 0.5rem;
       &.cta--small {
         @include cta--small;
