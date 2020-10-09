@@ -228,7 +228,7 @@ export default {
         object-fit: cover;
         height: 80px;
         @media only screen and (min-width: $lg-mobile) {
-          height: 180px;
+          height: 150px;
         }
       }
     }
