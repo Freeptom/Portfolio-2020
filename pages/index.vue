@@ -225,7 +225,6 @@ export default {
       display: flex;
       justify-content: center;
       &__image {
-        border-radius: $border-radius $border-radius 0 0;
         object-fit: cover;
         height: 80px;
         @media only screen and (min-width: $lg-mobile) {
