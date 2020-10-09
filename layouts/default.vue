@@ -284,12 +284,25 @@ section {
     letter-spacing: 0.02rem;
     line-height: 1.1;
     font-weight: 400;
-    font-size: 2.4rem;
+  }
+  h1 {
+    font-size: 2.2rem;
     @media only screen and (min-width: $lg-mobile) {
       font-size: 2.75rem;
     }
     @media only screen and (min-width: $desktop) {
       font-size: 3.75rem;
+      line-height: 102%;
+    }
+  }
+  h2 {
+    font-size: 2rem;
+
+    @media only screen and (min-width: $lg-mobile) {
+      font-size: 2.75rem;
+    }
+    @media only screen and (min-width: $desktop) {
+      font-size: 3rem;
       line-height: 102%;
     }
   }

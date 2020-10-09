@@ -167,16 +167,18 @@ export default {
 .how {
   background: $primary-color-lighter;
   background-image: linear-gradient(
-      60deg,
-      $primary-color-darker,
-      rgba(255, 255, 255, 0)
+      0deg,
+      $primary-color-darker 10%,
+      rgba(61, 64, 91, 0.8)
     ),
     url('~assets/images/sprinkle.svg');
+
   background-repeat: no-repeat, no-repeat;
   background-size: cover;
   position: relative;
   h2 {
     color: white;
+    // background: rgba(26, 46, 40, 0.5);
   }
   &::before {
     content: '';
@@ -199,25 +201,33 @@ export default {
 
 .card-list {
   padding: 0;
-  margin: 4rem 0;
   list-style: none;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-wrap: wrap;
+  @media only screen and (min-width: $tablet) {
+    justify-content: center;
+    margin: 4rem 0;
+  }
   .card {
-    width: 100%;
     background: white;
     border-radius: $border-radius;
     margin: 1rem;
     @media only screen and (min-width: $tablet) {
-      max-width: 40%;
+      max-width: 30%;
     }
     .hero-container {
       &__image {
-        display: block;
-        object-fit: cover;
-        height: auto;
+        border-radius: $border-radius $border-radius 0 0;
         width: 100%;
+        height: 100px;
+        object-fit: cover;
+        @media only screen and (min-width: $lg-mobile) {
+          height: 180px;
+        }
+        @media only screen and (min-width: $tablet) {
+          height: 200px;
+        }
       }
     }
     .card-content {
