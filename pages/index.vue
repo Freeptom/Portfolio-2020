@@ -18,7 +18,7 @@
     <div class="wrapper">
       <section class="how full-bleed">
         <div class="wrapper">
-          <h2>How I can help <span>you</span>.</h2>
+          <h2>How I can help build <span>your</span> website.</h2>
           <ul class="card-list">
             <li v-for="skill in Skills" :key="skill.heading" class="card">
               <card-item
@@ -49,21 +49,21 @@ export default {
       Skills: [
         {
           heading: 'Tailored for you',
-          desc: 'test',
-          hero: 'tailored.jpg',
-          icon: 'create.svg'
+          desc:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+          hero: 'creative.svg'
         },
         {
-          heading: 'Create a Vue project with the CLI',
-          desc: 'test',
-          hero: 'tailored.jpg',
-          icon: 'create.svg'
+          heading: 'Understand your needs',
+          desc:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+          hero: 'detail.svg'
         },
         {
           heading: 'Have fun',
-          desc: 'test',
-          hero: 'tailored.jpg',
-          icon: 'create.svg'
+          desc:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+          hero: 'creative.svg'
         }
       ]
     }
@@ -178,7 +178,6 @@ export default {
   position: relative;
   h2 {
     color: white;
-    // background: rgba(26, 46, 40, 0.5);
   }
   &::before {
     content: '';
@@ -203,35 +202,48 @@ export default {
   padding: 0;
   list-style: none;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
   @media only screen and (min-width: $tablet) {
-    justify-content: center;
     margin: 4rem 0;
   }
   .card {
-    background: white;
+    flex: 1 1 250px;
+    color: white;
+    transform: scale(1);
+    transition: background-color 250ms ease, transform 250ms ease;
     border-radius: $border-radius;
     margin: 1rem;
+    padding: 2rem 0;
+    &:hover {
+      transform: scale(1.05);
+    }
     @media only screen and (min-width: $tablet) {
-      max-width: 30%;
+      max-width: 40%;
     }
     .hero-container {
+      display: flex;
+      justify-content: center;
       &__image {
         border-radius: $border-radius $border-radius 0 0;
-        width: 100%;
-        height: 100px;
         object-fit: cover;
+        height: 80px;
         @media only screen and (min-width: $lg-mobile) {
           height: 180px;
-        }
-        @media only screen and (min-width: $tablet) {
-          height: 200px;
         }
       }
     }
     .card-content {
+      text-align: center;
+      max-width: 40ch;
+      margin: 0 auto;
       padding: 1rem;
+      .card-heading {
+        margin-bottom: 1rem;
+      }
+      .card-desc {
+        color: $grey4;
+      }
     }
   }
 }

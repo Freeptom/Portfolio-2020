@@ -123,6 +123,8 @@ h1 {
 
 h2 span {
   font-weight: 800;
+  font-style: italic;
+  color: $accent1;
 }
 
 em {

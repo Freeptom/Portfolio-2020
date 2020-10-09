@@ -2,17 +2,13 @@
   <div>
     <div class="hero-container">
       <img
-        :src="require(`~/assets/images/${herofile}`)"
+        :src="require(`~/assets/images/icons/${herofile}`)"
         class="hero-container__image"
       />
     </div>
     <div class="card-content">
-      <img
-        :src="require(`~/assets/images/icons/${iconfile}`)"
-        class="card-content__icon"
-      />
-      <h3>{{ heading }}</h3>
-      <p>{{ desc }}</p>
+      <h3 class="card-heading">{{ heading }}</h3>
+      <p class="card-desc">{{ desc }}</p>
     </div>
   </div>
 </template>
@@ -21,7 +17,6 @@
 export default {
   props: {
     herofile: { required: true, type: String },
-    iconfile: { required: true, type: String },
     heading: { required: true, type: String },
     desc: { required: true, type: String }
   }
