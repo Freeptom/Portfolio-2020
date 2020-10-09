@@ -164,24 +164,29 @@ header {
 }
 
 .toggle {
-  background: $accent2;
+  background: none;
+  border: 2px solid $accent1;
   padding: 10px 24px;
   border-radius: $border-radius;
   box-shadow: none;
-  color: white;
+  color: $accent1;
   font-weight: bold;
   font-size: 1rem;
-  border: none;
   text-transform: lowercase;
   transition: background-color 250ms ease;
 
   &:hover {
     cursor: pointer;
-    background: $accent2-darker;
+    background: $accent1;
+    color: white;
   }
-  &.nav-open {
+
+  &.nav-open,
+  &:active {
     z-index: 2;
     opacity: 1;
+    background: $accent1;
+    color: white;
   }
   @media only screen and (min-width: $tablet) {
     display: none;
