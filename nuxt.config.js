@@ -51,6 +51,7 @@ export default {
     scss: [
       '~assets/scss/_colors.scss',
       '~assets/scss/_variables.scss',
+      '~assets/scss/_typography.scss',
       '~assets/scss/_mixins.scss'
     ]
   },

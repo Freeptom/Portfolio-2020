@@ -1,0 +1,65 @@
+@font-face {
+  font-family: 'CircularStd';
+  src: url('~assets/fonts/CircularStd-Book.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CircularStd';
+  src: url('~assets/fonts/CircularStd-BookItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'CircularStd';
+  src: url('~assets/fonts/CircularStd-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CircularStd';
+  src: url('~assets/fonts/CircularStd-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'CircularStd';
+  src: url('~assets/fonts/CircularStd-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CircularStd';
+  src: url('~assets/fonts/CircularStd-Black.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+body {
+  font-family: 'CircularStd', Georgia, serif;
+  width: 100%;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+h2 span {
+  font-weight: 800;
+  font-style: italic;
+  color: $accent1;
+}
+
+em {
+  font-style: italic;
+}
+
+strong em {
+  font-weight: bold;
+  font-style: italic;
+}

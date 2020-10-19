@@ -18,7 +18,7 @@
     <div class="wrapper">
       <section class="how full-bleed">
         <div class="wrapper">
-          <h2>How I can help build <span>your</span> website.</h2>
+          <h2>How I can help you</h2>
           <ul class="card-list">
             <li v-for="skill in Skills" :key="skill.heading" class="card">
               <card-item
@@ -85,6 +85,18 @@ export default {
 </script>
 
 <style lang="scss">
+@keyframes floating {
+  from {
+    transform: translate(0, 0px);
+  }
+  65% {
+    transform: translate(0, 10px);
+  }
+  to {
+    transform: translate(0, -0px);
+  }
+}
+
 .intro {
   position: relative;
   display: flex;
@@ -105,8 +117,11 @@ export default {
     color: $grey1;
     letter-spacing: 0.02rem;
     margin: 0 0 1.75rem 0;
+    strong {
+      color: $primary-color-darker;
+    }
     @media only screen and (min-width: $desktop) {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       margin: 0 0 2.5rem 0;
     }
   }
@@ -142,6 +157,7 @@ export default {
       height: 150px;
       width: 150px;
       border-radius: 50%;
+      animation: floating 3s infinite ease-in-out;
       @media only screen and (min-width: $tablet) {
         height: 272px;
         width: 272px;
@@ -165,6 +181,7 @@ export default {
 }
 
 .how {
+  padding-top: 8rem;
   background: $primary-color-lighter;
   background-image: linear-gradient(
       0deg,
@@ -196,6 +213,9 @@ export default {
       right: 12vw;
     }
   }
+  @media only screen and (min-width: $tablet) {
+    padding-top: 200px;
+  }
 }
 
 .card-list {
@@ -205,35 +225,35 @@ export default {
   justify-content: center;
   flex-wrap: wrap;
   @media only screen and (min-width: $tablet) {
-    margin: 4rem 0;
+    margin: 2rem 0;
   }
   .card {
     flex: 1 1 250px;
     color: white;
-    transform: scale(1);
-    transition: background-color 250ms ease, transform 250ms ease;
     border-radius: $border-radius;
     margin: 1rem;
     padding: 2rem 0;
-    &:hover {
-      transform: scale(1.05);
+    &:hover > div > .hero-container .hero-container__image {
+      transform: scale(1.2);
     }
     @media only screen and (min-width: $tablet) {
       max-width: 40%;
     }
     .hero-container {
       display: flex;
-      justify-content: center;
       &__image {
         object-fit: cover;
+        padding: 1rem;
         height: 80px;
+        transform: scale(1);
+        transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
         @media only screen and (min-width: $lg-mobile) {
-          height: 150px;
+          height: 120px;
         }
       }
     }
     .card-content {
-      text-align: center;
+      text-align: left;
       max-width: 40ch;
       margin: 0 auto;
       padding: 1rem;
@@ -242,6 +262,7 @@ export default {
       }
       .card-desc {
         color: $grey4;
+        font-size: 16px;
       }
     }
   }
