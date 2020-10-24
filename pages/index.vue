@@ -4,7 +4,7 @@
       <div>
         <h1>Finally, a website your users will love.</h1>
         <p class="intro__sub-heading">
-          I’m Tom Pearson – builder of <strong>beautiful</strong>,
+          I’m Tom Pearson &#8212; builder of <strong>beautiful</strong>,
           <strong>bespoke</strong> and <strong>accessible</strong> websites for
           clients big and small.
         </p>
@@ -232,7 +232,7 @@ export default {
     color: white;
     border-radius: $border-radius;
     margin: 1rem;
-    padding: 2rem 0;
+    padding: 2rem 0 1rem 0;
     &:hover > div > .hero-container .hero-container__image {
       transform: scale(1.2);
     }
