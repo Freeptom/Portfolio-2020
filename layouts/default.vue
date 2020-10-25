@@ -63,10 +63,10 @@ section {
   margin: 0 auto;
   padding: 40px 0 4rem 0;
   @media only screen and (min-width: $lg-mobile) {
-    padding: 60px 0 6rem 0;
+    padding: 60px 0 12rem 0;
   }
   @media only screen and (min-width: $tablet) {
-    padding: 108px 0 8rem 0;
+    padding: 80px 0 8rem 0;
   }
   @media only screen and (min-width: $desktop) {
     padding: 108px 0 12rem 0;
