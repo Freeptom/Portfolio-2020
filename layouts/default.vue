@@ -66,7 +66,7 @@ section {
   margin: 0 auto;
   padding: 2rem 0 8rem 0;
   @media only screen and (min-width: $lg-mobile) {
-    padding: 4rem 0 12rem 0;
+    padding: 4rem 0 34vh 0;
   }
   @media only screen and (min-width: $tablet) {
     padding: 5rem 0 8rem 0;
