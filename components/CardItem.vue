@@ -1,11 +1,9 @@
 <template>
   <div>
-    <div class="hero-container">
-      <img
-        :src="require(`~/assets/images/icons/${herofile}`)"
-        class="hero-container__image"
-      />
-    </div>
+    <img
+      :src="require(`~/assets/images/icons/${herofile}`)"
+      class="card-image"
+    />
     <div class="card-content">
       <h3 class="card-heading">{{ heading }}</h3>
       <p class="card-desc">{{ desc }}</p>

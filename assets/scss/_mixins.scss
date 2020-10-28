@@ -3,25 +3,39 @@
 @mixin cta {
   background: $accent1;
   border-radius: $border-radius;
+  font-weight: 200;
   color: white;
-  font-size: 1.2rem;
-  text-transform: lowercase;
-  font-weight: bold;
+  font-size: 1rem;
   text-decoration: none;
-  padding: 20px 44px;
-  transform: scale(1);
+  margin: 0 2rem 0 0;
+  padding: 8px 16px;
+  border: 2px solid $accent1;
+  transform: scale(1) translateY(0);
   display: inline-block;
   &:hover {
-    background-color: $accent1-darker;
-    transform: scale(1.05);
-    transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1),
-      background-color 500ms cubic-bezier(0.22, 1, 0.36, 1);
+    transform: scale(1.02) translateY(-4px);
+    transition: transform 150ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  @media only screen and (min-width: $lg-mobile) {
+    font-size: 1.2rem;
+    margin: 0 2rem 0 0;
+  }
+  @media only screen and (min-width: $tablet) {
+    font-size: 1.2rem;
+  }
+}
+
+@mixin cta--alt {
+  @include cta;
+  background: none;
+  color: $accent1;
+  &:hover {
+    background: none;
   }
 }
 
 @mixin cta--small {
-  padding: 10px 22px;
+  border-radius: $border-radius;
+  padding: 8px 24px;
   margin: 0 0 0 1rem;
-  text-transform: lowercase;
-  display: initial;
 }

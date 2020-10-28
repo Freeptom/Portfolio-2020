@@ -57,43 +57,42 @@ a.cta {
   &--small {
     @include cta--small;
   }
+  &--alt {
+    @include cta--alt;
+  }
 }
 
 section {
   margin: 0 auto;
-  padding: 40px 0 4rem 0;
+  padding: 2rem 0 8rem 0;
   @media only screen and (min-width: $lg-mobile) {
-    padding: 60px 0 12rem 0;
+    padding: 4rem 0 12rem 0;
   }
   @media only screen and (min-width: $tablet) {
-    padding: 80px 0 8rem 0;
+    padding: 5rem 0 8rem 0;
   }
   @media only screen and (min-width: $desktop) {
-    padding: 108px 0 12rem 0;
+    padding: 7.5rem 0 12rem 0;
   }
   h1,
   h2 {
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
     color: $dark;
     letter-spacing: 0.02rem;
     line-height: 1.1;
     font-weight: 400;
   }
   h1 {
-    font-size: 2.2rem;
-    @media only screen and (min-width: $lg-mobile) {
-      font-size: 2.75rem;
-    }
+    font-size: 2rem;
     @media only screen and (min-width: $desktop) {
       font-size: 3.75rem;
       line-height: 102%;
     }
   }
   h2 {
-    font-size: 2rem;
-
+    font-size: 1.5rem;
     @media only screen and (min-width: $lg-mobile) {
-      font-size: 2.75rem;
+      font-size: 2.4rem;
     }
     @media only screen and (min-width: $desktop) {
       line-height: 102%;
