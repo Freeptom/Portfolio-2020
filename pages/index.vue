@@ -256,7 +256,7 @@ export default {
       transform: scale(1);
       transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
       @media only screen and (min-width: $lg-mobile) {
-        height: 100px;
+        height: 80px;
       }
     }
 
@@ -268,7 +268,10 @@ export default {
       .card-heading {
         font-size: 1.4rem;
         color: $primary-color-darker;
-        margin-bottom: 1.5rem;
+        margin-bottom: 0.5rem;
+        @media only screen and (min-width: $tablet) {
+          margin-bottom: 1.5rem;
+        }
       }
       .card-desc {
         color: #00562d;
