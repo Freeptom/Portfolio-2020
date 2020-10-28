@@ -92,7 +92,10 @@ section {
   h2 {
     font-size: 1.5rem;
     @media only screen and (min-width: $lg-mobile) {
-      font-size: 2.4rem;
+      font-size: 1.8rem;
+    }
+    @media only screen and (min-width: $tablet) {
+      font-size: 2rem;
     }
     @media only screen and (min-width: $desktop) {
       line-height: 102%;
