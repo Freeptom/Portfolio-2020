@@ -264,7 +264,7 @@ export default {
       text-align: left;
       max-width: 40ch;
       margin: 0;
-      padding: 1rem 2rem 1rem 0;
+      padding: 0 2rem 1rem 0;
       .card-heading {
         font-size: 1.4rem;
         color: $primary-color-darker;
