@@ -258,6 +258,9 @@ export default {
       @media only screen and (min-width: $lg-mobile) {
         height: 80px;
       }
+      @media only screen and (min-width: $tablet) {
+        height: 120px;
+      }
     }
 
     .card-content {
