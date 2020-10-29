@@ -74,6 +74,7 @@ section {
   @media only screen and (min-width: $desktop) {
     padding: 7.5rem 0 12rem 0;
   }
+
   h1,
   h2 {
     margin-bottom: 1rem;
@@ -100,6 +101,15 @@ section {
     @media only screen and (min-width: $desktop) {
       line-height: 102%;
     }
+  }
+}
+
+section:not(.intro) {
+  @media only screen and (min-width: $lg-mobile) {
+    padding-top: 8rem;
+  }
+  @media only screen and (min-width: $tablet) {
+    padding-top: 10.5rem;
   }
 }
 

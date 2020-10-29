@@ -22,7 +22,6 @@ export default {
 </script>
 
 <style lang="scss">
-h3,
 img {
   display: inline-block;
 }

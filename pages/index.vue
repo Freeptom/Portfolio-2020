@@ -2,15 +2,15 @@
   <div class="wrapper">
     <section class="intro">
       <div>
-        <h1>Finally, a website your users will love.</h1>
-        <p class="intro__sub-heading">
-          I’m Tom Pearson <span>&#8212;</span> builder of
+        <h1>Finally, a website users will love.</h1>
+        <p class="intro__subheading">
+          I’m Tom Pearson &#8212; builder of
           <strong>beautiful</strong>, <strong>bespoke</strong> and
-          <strong>accessible</strong> websites for clients big and small.
+          <strong>accessible</strong> websites.
         </p>
         <div class="cta-container">
           <nuxt-link to="#" class="cta--alt">My Work</nuxt-link>
-          <nuxt-link to="#" class="cta">Lets chat</nuxt-link>
+          <nuxt-link to="#" class="cta">Let's chat</nuxt-link>
         </div>
       </div>
       <div class="intro__image-wrapper">
@@ -21,7 +21,8 @@
     <div class="wrapper">
       <section class="how full-bleed">
         <div class="wrapper">
-          <h2>How I can help you</h2>
+          <p class="mini-heading">your home on the web</p>
+          <h2>How I can help you.</h2>
           <ul class="card-list">
             <li v-for="skill in Skills" :key="skill.heading" class="card">
               <card-item
@@ -37,36 +38,63 @@
         </div>
       </section>
     </div>
+
+    <div class="wrapper">
+      <section class="work full-bleed">
+        <div class="wrapper">
+          <p class="mini-heading">Join the list</p>
+          <h2>A few of the good folks I've worked with</h2>
+          <ul class="logo-list">
+            <li v-for="logo in Logos" :key="logo.id">
+              <logo :logo="logo.image"></logo>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
   </div>
 </template>
 
 <script>
 import CardItem from '../components/CardItem.vue'
+import Logo from '../components/Logo.vue'
 export default {
   components: {
-    CardItem
+    CardItem,
+    Logo
   },
   data() {
     return {
       title: 'Tom the Web Developer',
       Skills: [
         {
-          heading: 'Tailored for you',
+          heading: 'Creative mind',
           desc:
             "No, just a regular mistake. Oh, how I wish I could believe or understand that! There's only one reasonable course of action now: kill Flexo!",
           hero: 'creative.svg'
         },
         {
-          heading: 'Understand your needs',
+          heading: 'People-centred development',
           desc:
             "Good news, everyone! I've taught the toaster to feel love! Hey, what kinda party is this? Dr. Zoidberg, that doesn't make sense.",
           hero: 'detail.svg'
         },
         {
-          heading: 'Have fun',
+          heading: 'Experience in Consultancy',
           desc:
             "With a warning label this big, you know they gotta be fun! You can crush me but you can't crush my spirit! Ask her how her day was.",
           hero: 'creative.svg'
+        }
+      ],
+      Logos: [
+        {
+          image: 'vodafone.png'
+        },
+        {
+          image: 'arla.png'
+        },
+        {
+          image: 'imi.png'
         }
       ]
     }
@@ -113,7 +141,7 @@ export default {
       max-width: 20ch;
     }
   }
-  &__sub-heading {
+  &__subheading {
     font-weight: 300;
     font-size: 1rem;
     max-width: 40ch;
@@ -122,7 +150,7 @@ export default {
     margin: 0 0 1.5rem 0;
     strong,
     span {
-      color: $primary-color-darker;
+      color: $dark;
     }
     @media only screen and (min-width: $lg-mobile) {
       font-size: 1.2rem;
@@ -192,7 +220,9 @@ export default {
 }
 
 .how {
-  padding-top: 4rem;
+  .mini-heading {
+    color: $primary-color-darker;
+  }
   h2 {
     z-index: 1;
     color: $primary-color-darker;
@@ -225,12 +255,20 @@ export default {
       right: 12vw;
     }
   }
-  @media only screen and (min-width: $lg-mobile) {
-    padding-top: 8rem;
+}
+
+.work {
+  background: $grey4;
+  .mini-heading {
+    color: $dark;
   }
-  @media only screen and (min-width: $tablet) {
-    padding-top: 10.5rem;
-  }
+}
+
+.mini-heading {
+  margin: 0 0 0.75rem 0.1rem;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
 }
 
 .card-list {
@@ -286,6 +324,27 @@ export default {
           font-size: 1.2rem;
         }
       }
+    }
+  }
+}
+
+.logo-list {
+  margin-top: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  justify-content: space-between;
+  align-items: center;
+
+  li > div > img {
+    filter: grayscale(100%);
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    &:hover {
+      transition: filter 500ms;
+      filter: grayscale(0%);
     }
   }
 }
